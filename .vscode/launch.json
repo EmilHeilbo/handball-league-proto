@@ -8,13 +8,9 @@
             "type": "java",
             "name": "Launch App",
             "request": "launch",
+            "windows": {"vmArgs": "--module-path C:/javafx-sdk-15/lib --add-modules javafx.controls,javafx.fxml"},
+            "linux": {"vmArgs": "--module-path lib/javafx-sdk-15/lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED"},
             "mainClass": "dev.yukie.handball.presentation.App",
-            "windows": {
-                "vmArgs": "--module-path C:/javafx-sdk-15/lib --add-modules javafx.controls,javafx.fxml"
-            },
-            "linux": {
-                "vmArgs": "--module-path lib/javafx-sdk-15/lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED"
-            },
             "projectName": "handball-league-proto_9cce0f10"
         },
         {
@@ -28,12 +24,6 @@
             "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
-            "windows": {
-                "vmArgs": "--module-path C:/javafx-sdk-15/lib --add-modules javafx.controls,javafx.fxml"
-            },
-            "linux": {
-                "vmArgs": "--module-path lib/javafx-sdk-15/lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED"
-            },
             "mainClass": "${file}"
         }
     ]
