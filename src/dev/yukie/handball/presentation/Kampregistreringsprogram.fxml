@@ -15,7 +15,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Button fx:id="opretHold" onAction="#handleOpretHold" layoutX="33.0" layoutY="558.0" mnemonicParsing="false" text="Opret Hold" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="560.0" />
-                  <ListView layoutX="-41.0" prefHeight="518.0" prefWidth="126.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="40.0" />
+                  <ListView fx:id="holdList" layoutX="-41.0" prefHeight="518.0" prefWidth="126.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="40.0" />
                   <Label fx:id="hold" alignment="CENTER" layoutX="45.0" layoutY="14.0" text="Hold" AnchorPane.bottomAnchor="560.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="24.0" />
