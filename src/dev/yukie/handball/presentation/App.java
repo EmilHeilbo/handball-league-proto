@@ -1,15 +1,16 @@
 package dev.yukie.handball.presentation;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.TableView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.layout.GridPane;
 
 public class App extends Application {
-    private Stage stage;
-    private TableView<String> tableView;
+    private FXMLLoader loader = new FXMLLoader();
+    private Stage stage = new Stage();
+    private Scene scene;
+    private Parent root;
 
     public static void main(String[] args) {
         launch(args);
@@ -18,9 +19,10 @@ public class App extends Application {
     @SuppressWarnings("unchecked")
     @Override
     public void start(Stage pStage) throws Exception {
-        stage = FXMLLoader.load(getClass().getResource("GUI.fxml"));
-        tableView = (TableView<String>)((GridPane) stage.getScene().getRoot()).getChildren().get(2);
-        tableView.setItems(FXCollections.observableArrayList("Hej", "gfasdf@asdf.coasd", "3345435", "Grp 5", "Sport"));
+        loader.setLocation(getClass().getResource("Kampregistreringsprogram.fxml"));
+        root = loader.load();
+        scene = new Scene(root);
+        stage.setScene(scene);
         stage.show();
     }
 }
