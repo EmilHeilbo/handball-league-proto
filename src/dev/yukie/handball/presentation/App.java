@@ -16,7 +16,6 @@ public class App extends Application {
         launch(args);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public void start(Stage pStage) throws Exception {
         loader.setLocation(getClass().getResource("Kampregistreringsprogram.fxml"));
