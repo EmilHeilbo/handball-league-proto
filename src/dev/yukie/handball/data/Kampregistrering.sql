@@ -26,21 +26,21 @@ CREATE TABLE kampe (
 	CONSTRAINT CHK_Hold  CHECK (hjemme!=ude)
 );
 
-CREATE TABLE h�ndelser (
-	h�ndelse_id int IDENTITY NOT NULL,
-	h�ndelse nvarchar(20)
+CREATE TABLE haendelser (
+	haendelse_id int IDENTITY NOT NULL,
+	haendelse nvarchar(20)
 
-	CONSTRAINT UC_H�ndelse UNIQUE (h�ndelse),
-	CONSTRAINT PK_H�ndelse PRIMARY KEY(h�ndelse_id)
+	CONSTRAINT UC_Haendelse UNIQUE (haendelse),
+	CONSTRAINT PK_Haendelse PRIMARY KEY(haendelse_id)
 );
 
-CREATE TABLE registrering(
+CREATE TABLE registreringer(
 	registrerings_id int IDENTITY NOT NULL,
 	kamp int NOT NULL,
 	tidspunkt int NOT NULL,
-	h�ndelse int NOT NULL
+	haendelse int NOT NULL
 
 	CONSTRAINT PK_Registrering PRIMARY KEY (registrerings_id),
 	CONSTRAINT FK_Kamp         FOREIGN KEY (kamp)     REFERENCES kampe(kamp_id),
-	CONSTRAINT FK_H�ndelse    FOREIGN KEY (h�ndelse) REFERENCES h�ndelser(h�ndelse_id),
+	CONSTRAINT FK_Haendelse    FOREIGN KEY (haendelse) REFERENCES haendelser(haendelse_id),
 );
