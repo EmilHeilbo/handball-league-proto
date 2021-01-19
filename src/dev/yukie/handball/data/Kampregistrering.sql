@@ -26,19 +26,21 @@ CREATE TABLE kampe (
 	CONSTRAINT CHK_Hold  CHECK (hjemme!=ude)
 );
 
-CREATE TABLE hændelser (
-	hændelse_id int IDENTITY NOT NULL,
-	hændelse nvarchar(20)
+CREATE TABLE hï¿½ndelser (
+	hï¿½ndelse_id int IDENTITY NOT NULL,
+	hï¿½ndelse nvarchar(20)
 
-	CONSTRAINT UC_Hændelse UNIQUE (hændelse),
-	CONSTRAINT PK_Hændelse PRIMARY KEY(hændelse_id)
+	CONSTRAINT UC_Hï¿½ndelse UNIQUE (hï¿½ndelse),
+	CONSTRAINT PK_Hï¿½ndelse PRIMARY KEY(hï¿½ndelse_id)
 );
 
 CREATE TABLE registrering(
+	registrerings_id int IDENTITY NOT NULL,
 	kamp int NOT NULL,
 	tidspunkt int NOT NULL,
-	hændelse int NOT NULL
+	hï¿½ndelse int NOT NULL
 
-	CONSTRAINT FK_Kamp     FOREIGN KEY (kamp)     REFERENCES kampe(kamp_id),
-	CONSTRAINT FK_Hændelse FOREIGN KEY (hændelse) REFERENCES hændelser(hændelse_id),
+	CONSTRAINT PK_Registrering PRIMARY KEY (registrerings_id),
+	CONSTRAINT FK_Kamp         FOREIGN KEY (kamp)     REFERENCES kampe(kamp_id),
+	CONSTRAINT FK_Hï¿½ndelse    FOREIGN KEY (hï¿½ndelse) REFERENCES hï¿½ndelser(hï¿½ndelse_id),
 );
