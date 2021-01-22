@@ -1,5 +1,6 @@
 package dev.yukie.handball.presentation;
 
+import dev.yukie.handball.data.JDBCHandler;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +20,8 @@ public class App extends Application {
     public static Scene registrerKamp;
 
     public static void main(String[] args) {
-        launch(args);
+        var jdbc = new JDBCHandler();
+        //launch(args);
     }
 
     @Override

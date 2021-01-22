@@ -44,3 +44,14 @@ CREATE TABLE registreringer(
 	CONSTRAINT FK_Kamp         FOREIGN KEY (kamp)     REFERENCES kampe(kamp_id),
 	CONSTRAINT FK_Haendelse    FOREIGN KEY (haendelse) REFERENCES haendelser(haendelse_id),
 );
+
+
+
+INSERT INTO hold (navn) VALUES
+('Aalborg'),
+('Aarhus'),
+('Herning'),
+('Koebenhavn'),
+('Silkeborg');
+
+SELECT * FROM hold;
