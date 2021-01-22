@@ -9,41 +9,46 @@ import javafx.stage.Stage;
 public class App extends Application {
     private FXMLLoader loader = new FXMLLoader();
     public static Stage stage = new Stage();
-    public static Scene scene;
-    public static Parent root;
+    public static Scene sceneKampregistreringsprogram;
+    public static Scene sceneKamprapport;
+    public static Scene sceneOpretHold;
+    public static Scene sceneOpretKamp;
+    public static Scene registrerKamp;
+    private static Parent root;
 
     public static void main(String[] args) {
+        System.out.println("start app :D");
         launch(args);
     }
 
     @Override
     public void start(Stage pStage) throws Exception {
+        System.out.println("Inde i start().");
         loader.setLocation(getClass().getResource("Kampregistreringsprogram.fxml"));
         root = loader.load();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        sceneKampregistreringsprogram = new Scene(root);
+        stage.setScene(sceneKampregistreringsprogram);
         stage.show();
-
+        loader.
+        loadAllFxml();
     }
 
-    private void loadAllFxml(Stage pStage) throws Exception{
+    private void loadAllFxml() throws Exception{
+        System.out.println("Inde i loadAllFxml().");
         loader.setLocation(getClass().getResource("Kamprapport.fxml"));
+        System.out.println("Loadede resource.");
         root = loader.load();
-        Scene sceneKampRapport = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        System.out.println("Loader.load uden fejl ?");
+        sceneKamprapport = new Scene(root);
+        System.out.println("Loadede kamprapport.");
 
         loader.setLocation(getClass().getResource("OpretHold.fxml"));
         root = loader.load();
-        Scene sceneOpretHold = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        sceneOpretHold = new Scene(root);
 
         loader.setLocation(getClass().getResource("OpretKamp.fxml"));
         root = loader.load();
-        Scene sceneOpretKamp= new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        sceneOpretKamp= new Scene(root);
 
 
     }
