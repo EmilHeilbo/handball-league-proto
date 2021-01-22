@@ -10,48 +10,47 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Scene xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <AnchorPane>
-      <children>
-         <VBox>
-            <children>
-               <HBox>
-                  <children>
-                     <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="60.0" text="Navn">
-                        <font>
-                           <Font size="14.0" />
-                        </font>
-                        <opaqueInsets>
-                           <Insets />
-                        </opaqueInsets>
-                        <HBox.margin>
-                           <Insets />
-                        </HBox.margin>
-                     </Label>
-                     <TextField prefWidth="180.0">
-                        <HBox.margin>
-                           <Insets left="20.0" />
-                        </HBox.margin>
-                     </TextField>
-                  </children>
-                  <VBox.margin>
-                     <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                  </VBox.margin>
-               </HBox>
-               <HBox>
-                  <children>
-                     <Button cancelButton="true" mnemonicParsing="false" prefWidth="60.0" text="Anullere" />
-                     <Button defaultButton="true" mnemonicParsing="false" prefWidth="180.0" text="Opret Hold">
-                        <HBox.margin>
-                           <Insets left="20.0" />
-                        </HBox.margin>
-                     </Button>
-                  </children>
-                  <VBox.margin>
-                     <Insets bottom="8.0" left="8.0" right="8.0" />
-                  </VBox.margin>
-               </HBox>
-            </children>
-         </VBox>
-      </children></AnchorPane>
-</Scene>
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox>
+         <children>
+            <HBox>
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="60.0" text="Navn">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefWidth="180.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox>
+               <children>
+                  <Button cancelButton="true" mnemonicParsing="false" prefWidth="60.0" text="Anullere" />
+                  <Button defaultButton="true" mnemonicParsing="false" prefWidth="180.0" text="Opret Hold">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

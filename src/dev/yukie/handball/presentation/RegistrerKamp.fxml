@@ -9,70 +9,69 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Scene xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <AnchorPane>
-      <children>
-         <HBox>
-            <children>
-               <VBox>
-                  <children>
-                     <Label alignment="CENTER" minWidth="70.0" text="Herning">
-                        <VBox.margin>
-                           <Insets top="8.0" />
-                        </VBox.margin>
-                        <font>
-                           <Font size="18.0" />
-                        </font>
-                     </Label>
-                     <Button minWidth="70.0" mnemonicParsing="false" text="Mål">
-                        <VBox.margin>
-                           <Insets top="8.0" />
-                        </VBox.margin>
-                     </Button>
-                     <Button minWidth="70.0" mnemonicParsing="false" text="Udvisning">
-                        <VBox.margin>
-                           <Insets top="8.0" />
-                        </VBox.margin>
-                     </Button>
-                  </children>
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </VBox>
-               <Label alignment="CENTER" text="1:39">
-                  <font>
-                     <Font size="36.0" />
-                  </font>
-                  <HBox.margin>
-                     <Insets left="8.0" right="8.0" />
-                  </HBox.margin>
-               </Label>
-               <VBox>
-                  <children>
-                     <Label alignment="CENTER" minWidth="70.0" text="Silkeborg">
-                        <VBox.margin>
-                           <Insets top="8.0" />
-                        </VBox.margin>
-                        <font>
-                           <Font size="18.0" />
-                        </font>
-                     </Label>
-                     <Button minWidth="70.0" mnemonicParsing="false" text="Mål">
-                        <VBox.margin>
-                           <Insets top="8.0" />
-                        </VBox.margin>
-                     </Button>
-                     <Button minWidth="70.0" mnemonicParsing="false" text="Udvisning">
-                        <VBox.margin>
-                           <Insets top="8.0" />
-                        </VBox.margin>
-                     </Button>
-                  </children>
-               </VBox>
-            </children>
-            <padding>
-               <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-            </padding>
-         </HBox>
-      </children></AnchorPane>
-</Scene>
+<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox>
+         <children>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" minWidth="70.0" text="Herning">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button minWidth="70.0" mnemonicParsing="false" text="Mål">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button minWidth="70.0" mnemonicParsing="false" text="Udvisning">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <Label alignment="CENTER" text="1:39">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="8.0" right="8.0" />
+               </HBox.margin>
+            </Label>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" minWidth="70.0" text="Silkeborg">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button minWidth="70.0" mnemonicParsing="false" text="Mål">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button minWidth="70.0" mnemonicParsing="false" text="Udvisning">
+                     <VBox.margin>
+                        <Insets top="8.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -29,12 +29,12 @@ public class App extends Application {
         sceneKampregistreringsprogram = new Scene(root);
         stage.setScene(sceneKampregistreringsprogram);
         stage.show();
-        loader.
         loadAllFxml();
     }
 
-    private void loadAllFxml() throws Exception{
+    private void loadAllFxml() throws Exception {
         System.out.println("Inde i loadAllFxml().");
+        loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Kamprapport.fxml"));
         System.out.println("Loadede resource.");
         root = loader.load();
@@ -42,14 +42,15 @@ public class App extends Application {
         sceneKamprapport = new Scene(root);
         System.out.println("Loadede kamprapport.");
 
+        loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("OpretHold.fxml"));
         root = loader.load();
         sceneOpretHold = new Scene(root);
 
+        loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("OpretKamp.fxml"));
         root = loader.load();
-        sceneOpretKamp= new Scene(root);
-
+        sceneOpretKamp = new Scene(root);
 
     }
 }
