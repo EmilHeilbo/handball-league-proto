@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     private FXMLLoader loader = new FXMLLoader();
-    private Stage stage = new Stage();
-    private Scene scene;
-    private Parent root;
+    public static Stage stage = new Stage();
+    public static Scene scene;
+    public static Parent root;
 
     public static void main(String[] args) {
         launch(args);
@@ -23,5 +23,28 @@ public class App extends Application {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+    }
+
+    private void loadAllFxml(Stage pStage) throws Exception{
+        loader.setLocation(getClass().getResource("Kamprapport.fxml"));
+        root = loader.load();
+        Scene sceneKampRapport = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+        loader.setLocation(getClass().getResource("OpretHold.fxml"));
+        root = loader.load();
+        Scene sceneOpretHold = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+        loader.setLocation(getClass().getResource("OpretKamp.fxml"));
+        root = loader.load();
+        Scene sceneOpretKamp= new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
     }
 }

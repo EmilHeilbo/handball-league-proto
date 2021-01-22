@@ -68,8 +68,10 @@ public class Model {
     /* TODO - Logik,
     retunere en liste med array af Strings,
     svarende til holdnavnene. */
-    public static List<int[]>  getKampe()
-    {return kampe.subList(1, kampe.size());}
+
+    public static List<int[]>  getKampe(){
+        return kampe.subList(1, kampe.size());
+    }
 
     /* TODO - Logik,
     retunere en liste med array af Strings,
