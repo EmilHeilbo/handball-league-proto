@@ -1,21 +1,19 @@
 package dev.yukie.handball.logic;
 
+import dev.yukie.handball.data.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 /* Representere vores data som var det taget direkte fra databasen,
    hvilket ses ved at vi har tomme værdier i listerne på indeks 0. */
 public class Model {
-    private static List<String>  hold;
-    private static List<int[]>   kampe;
-    private static List<String>  hændelser;
-    private static List<int[]>   registreringer;
-    private static List<Integer> stilling;
 
     // Initialisering - fjernes når database delen er implementeret.
     static{
-        hold = new ArrayList<>(
+        AppData.hold = new ArrayList<>(
             Arrays.asList(
                 "",
                 "Ålborg",     // 1
@@ -24,7 +22,7 @@ public class Model {
                 "København",  // 4
                 "Silkeborg"));// 5
 
-        kampe = new ArrayList<>(
+        AppData.kampe = new ArrayList<>(
             Arrays.asList(
                 //new int[]{},
                 new int[]{3,5},  // 1 - Herning vs. Silkeborg
@@ -32,7 +30,7 @@ public class Model {
                 new int[]{1,2})  // 3 - Ålborg  vs. Århus
         );
 
-        hændelser = new ArrayList<>(
+        AppData.hændelser = new ArrayList<>(
             Arrays.asList(
                 "",
                 "Mål Hjemme",       // 1
@@ -42,7 +40,7 @@ public class Model {
             )
         );
 
-        registreringer = new ArrayList<>(
+        AppData.registreringer = new ArrayList<>(
             Arrays.asList(
                 //new int[]{},
                 new int[]{1,9,4},   // 1 - Kamp nr 1,  9 sekunder inde, hændelse nr 4.
@@ -53,8 +51,8 @@ public class Model {
             )
         );
 
-        stilling = new ArrayList<>(Arrays.asList(new Integer[10]));
-        stilling.add(3, 2);           // hold nr 3, har 2 points,
+        AppData.stilling = new ArrayList<>(Arrays.asList(new Integer[10]));
+        AppData.stilling.add(3, 2);           // hold nr 3, har 2 points,
     }
 
 
@@ -63,14 +61,14 @@ public class Model {
 // ##########vvvvvvvvvvvvvvvv###########
 
     public static List<String> getHold()
-    {return hold.subList(1, hold.size());}
+    {return AppData.hold.subList(1, AppData.hold.size());}
 
     /* TODO - Logik,
     retunere en liste med array af Strings,
     svarende til holdnavnene. */
 
     public static List<int[]>  getKampe(){
-        return kampe.subList(1, kampe.size());
+        return AppData.kampe.subList(1, AppData.kampe.size());
     }
 
     /* TODO - Logik,
@@ -78,13 +76,13 @@ public class Model {
     svarende til tidspunkt og hændelse af registreringer,
     for den bestemte kamp */
     public static List<int[]>  getRegistreringer(int kamp)
-    {return registreringer.subList(1, registreringer.size());}
+    {return AppData.registreringer.subList(1, AppData.registreringer.size());}
 
     /* TODO - Logik
     retunere en liste med array af Strings,
     svarende til holdnavn og points. */
     public static List<Integer> getStilling(){
-        return stilling;
+        return AppData.stilling;
     }
 
 
@@ -95,13 +93,13 @@ public class Model {
     /* TODO - Logik
     navn må ikke allerede være i hold listen. */
     public static void addHold(String navn)
-    {hold.add(navn);}
+    {AppData.hold.add(navn);}
 
     /* TODO - Logik
     kamp.length==2
     kamp[0] og kamp[1] <= hold.length+1.*/
     public static void addKamp(int[] kamp)
-    {kampe.add(kamp);}
+    {AppData.kampe.add(kamp);}
 
     /* TODO - Logik
     registrering.length==3
@@ -109,7 +107,7 @@ public class Model {
     registrering[2] <= hændelser.length+1
     registrering[1] skal overholde kampens maks længde i spilletid. */
     public static void addRegistrering(int[] registrering)
-    {registreringer.add(registrering);}
+    {AppData.registreringer.add(registrering);}
 
 
 // #####################################

@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class JDBCHandler {
 
@@ -24,8 +23,8 @@ public class JDBCHandler {
     udfør SELECT Query på hold,
     retunere alle holdNavne i rækkefølge,
     indeks 0 skal være tom. */
-    public List<String> readHold(){
-        return new ArrayList<String>();
+    public void readHold(){
+        AppData.hold = new ArrayList<String>();
     }
 
     /* TODO - Logik
@@ -34,16 +33,16 @@ public class JDBCHandler {
     hvor int[0], svarer til hjemme holdet,
     og int[1], svarer til ude holdet.
     indeks 0 i listen skal være tom. */
-    public List<int[]> readKampe(){
-        return new ArrayList<int[]>();
+    public void readKampe(){
+        AppData.kampe = new ArrayList<int[]>();
     }
 
     /* TODO - Logik
     udfør SELECT Query på haendelser,
     retunere alle hændelser i rækkefølge,
     indeks 0 skal være tom. */
-    public List<String> readHændelser(){
-        return new ArrayList<String>();
+    public void readHændelser(){
+        AppData.hændelser = new ArrayList<String>();
     }
 
     /* TODO - Logik
@@ -53,25 +52,22 @@ public class JDBCHandler {
     int[1], svarer til tidspunktet,
     int[2], svarer til hændelsen.
     indeks 0 i listen skal være tom. */
-    public List<int[]> readRegistreringer(){
-        return new ArrayList<int[]>();
+    public void readRegistreringer(){
+        AppData.registreringer = new ArrayList<int[]>();
     }
 
     /* TODO - Logik
     udfør INSERT på hold med auto increment. */
-    public boolean createHold(String navn){
-        return true;
+    public void createHold(String navn){
     }
 
     /* TODO - Logik
     udfør INSERT på kampe med auto increment. */
-    public boolean createKamp(int hjemme, int ude){
-        return true;
+    public void createKamp(int hjemme, int ude){
     }
 
     /* TODO -Logik
     udfør INSERT på registrering med auto increment. */
-    public boolean createRegistrering(int kamp, int tidspunkt, int hændelse){
-        return true;
+    public void createRegistrering(int kamp, int tidspunkt, int hændelse){
     }
 }
