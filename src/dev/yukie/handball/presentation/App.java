@@ -17,30 +17,24 @@ public class App extends Application {
     private static Parent root;
 
     public static void main(String[] args) {
-        System.out.println("start app :D");
         launch(args);
     }
 
     @Override
     public void start(Stage pStage) throws Exception {
-        System.out.println("Inde i start().");
         loader.setLocation(getClass().getResource("Kampregistreringsprogram.fxml"));
         root = loader.load();
         sceneKampregistreringsprogram = new Scene(root);
         stage.setScene(sceneKampregistreringsprogram);
-        stage.show();
         loadAllFxml();
+        stage.show();
     }
 
     private void loadAllFxml() throws Exception {
-        System.out.println("Inde i loadAllFxml().");
         loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("Kamprapport.fxml"));
-        System.out.println("Loadede resource.");
         root = loader.load();
-        System.out.println("Loader.load uden fejl ?");
         sceneKamprapport = new Scene(root);
-        System.out.println("Loadede kamprapport.");
 
         loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("OpretHold.fxml"));
