@@ -4,17 +4,19 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class App extends Application {
     private FXMLLoader loader = new FXMLLoader();
+    private Parent root;
     public static Stage stage = new Stage();
+    public static Stage popupStage = new Stage();
     public static Scene sceneKampregistreringsprogram;
     public static Scene sceneKamprapport;
     public static Scene sceneOpretHold;
     public static Scene sceneOpretKamp;
     public static Scene registrerKamp;
-    private static Parent root;
 
     public static void main(String[] args) {
         launch(args);
@@ -22,6 +24,8 @@ public class App extends Application {
 
     @Override
     public void start(Stage pStage) throws Exception {
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.initOwner(stage);
         loader.setLocation(getClass().getResource("Kampregistreringsprogram.fxml"));
         root = loader.load();
         sceneKampregistreringsprogram = new Scene(root);

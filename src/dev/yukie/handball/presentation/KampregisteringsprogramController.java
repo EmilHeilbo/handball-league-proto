@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Modality;
 
 public class KampregisteringsprogramController{
     
@@ -25,10 +26,14 @@ public class KampregisteringsprogramController{
         holdList.getItems().addAll(Model.getHold());
         Model.addHold("Test");
         System.out.println("Trykkede på opret Hold.");
+        App.popupStage.setScene(App.sceneOpretHold);
+        App.popupStage.show();
     }
     @FXML
     private void handleOpretKamp() {
         kampeList.getItems().clear();
         System.out.println("Trykkede på opret Kamp.");
+        App.popupStage.setScene(App.sceneOpretKamp);
+        App.popupStage.show();
     }
 }
