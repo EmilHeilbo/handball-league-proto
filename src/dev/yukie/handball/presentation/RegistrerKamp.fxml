@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets ?>
-<?import javafx.scene.control.Button ?>
-<?import javafx.scene.control.Label ?>
-<?import javafx.scene.layout.AnchorPane ?>
-<?import javafx.scene.layout.HBox ?>
-<?import javafx.scene.layout.VBox ?>
-<?import javafx.scene.text.Font ?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox>
          <children>
             <VBox>
                <children>
-                  <Label alignment="CENTER" minWidth="70.0" text="Herning">
+                  <Label fx:id="hjemmelabel" alignment="CENTER" minWidth="70.0" text="Herning">
                      <VBox.margin>
                         <Insets top="8.0" />
                      </VBox.margin>
@@ -22,12 +19,12 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button minWidth="70.0" mnemonicParsing="false" text="Maal">
+                  <Button fx:id="maalhjemme" minWidth="70.0" mnemonicParsing="false" onAction="#maalHjemme" text="Maal">
                      <VBox.margin>
                         <Insets top="8.0" />
                      </VBox.margin>
                   </Button>
-                  <Button minWidth="70.0" mnemonicParsing="false" text="Udvisning">
+                  <Button fx:id="udvisninghjemme" minWidth="70.0" mnemonicParsing="false" onAction="#udvisningHjemme" text="Udvisning">
                      <VBox.margin>
                         <Insets top="8.0" />
                      </VBox.margin>
@@ -37,7 +34,7 @@
                   <Insets />
                </HBox.margin>
             </VBox>
-            <Label alignment="CENTER" text="1:39">
+            <Label fx:id="tid" alignment="CENTER" text="1:39">
                <font>
                   <Font size="36.0" />
                </font>
@@ -47,7 +44,7 @@
             </Label>
             <VBox>
                <children>
-                  <Label alignment="CENTER" minWidth="70.0" text="Silkeborg">
+                  <Label fx:id="udelabel" alignment="CENTER" minWidth="70.0" text="Silkeborg">
                      <VBox.margin>
                         <Insets top="8.0" />
                      </VBox.margin>
@@ -55,12 +52,12 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button minWidth="70.0" mnemonicParsing="false" text="Maal">
+                  <Button fx:id="maalude" minWidth="70.0" mnemonicParsing="false" onAction="#maalUde" text="Maal">
                      <VBox.margin>
                         <Insets top="8.0" />
                      </VBox.margin>
                   </Button>
-                  <Button minWidth="70.0" mnemonicParsing="false" text="Udvisning">
+                  <Button fx:id="udvisningude" minWidth="70.0" mnemonicParsing="false" onAction="#udvisningUde" text="Udvisning">
                      <VBox.margin>
                         <Insets top="8.0" />
                      </VBox.margin>

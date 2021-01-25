@@ -10,9 +10,10 @@ public class JDBCHandler {
     private static final String connectionUrl = "jdbc:sqlserver://localhost:1433;instanceName=SQLEXPRESS;databaseName=KampregistreringDB;integratedSecurity=true;";
     private static Connection connection;
 
-    static {
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+        static {
+       try {
+          Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(connectionUrl);
             loadAllData();
         } catch (ClassNotFoundException | SQLException e) {
