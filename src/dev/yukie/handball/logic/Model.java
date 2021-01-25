@@ -61,7 +61,8 @@ public class Model {
 // ##########vvvvvvvvvvvvvvvv###########
 
     public static List<String> getHold()
-    {return AppData.hold.subList(1, AppData.hold.size());}
+    {   if(AppData.hold.size()==0) return AppData.hold;
+        return AppData.hold.subList(1, AppData.hold.size());}
 
     /* TODO - Logik,
     retunere en liste med array af Strings,
