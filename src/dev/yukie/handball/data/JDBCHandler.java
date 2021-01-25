@@ -10,20 +10,22 @@ public class JDBCHandler {
     private static final String connectionUrl = "jdbc:sqlserver://localhost:1433;instanceName=SQLEXPRESS;databaseName=KampregistreringDB;integratedSecurity=true;";
     private static Connection connection;
 
-    static {
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+
+        static {
+       try {
+          Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             connection = DriverManager.getConnection(connectionUrl);
             var stmt = connection.createStatement();
             var sql = "SELECT * FROM hold";
             var rs = stmt.executeQuery(sql);
-            while(rs.next()){
-                System.out.println(rs.getString("navn"));
+            while (rs.next()) {
+               System.out.println(rs.getString("navn"));
             }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
+
 
     /* TODO - Logik
     udfør SELECT Query på hold,
