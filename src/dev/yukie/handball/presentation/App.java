@@ -21,7 +21,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
         var jdbc = new JDBCHandler();
-        //launch(args);
+        launch(args);
     }
 
     @Override

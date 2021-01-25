@@ -25,15 +25,19 @@ public class KampregisteringsprogramController{
         holdList.getItems().clear();
         holdList.getItems().addAll(Model.getHold());
         Model.addHold("Test");
-        System.out.println("Trykkede på opret Hold.");
+        System.out.println("Trykkede paa opret Hold.");
         App.popupStage.setScene(App.sceneOpretHold);
         App.popupStage.show();
     }
     @FXML
     private void handleOpretKamp() {
         kampeList.getItems().clear();
-        System.out.println("Trykkede på opret Kamp.");
+        System.out.println("Trykkede paa opret Kamp.");
         App.popupStage.setScene(App.sceneOpretKamp);
         App.popupStage.show();
+    }
+    
+    public void initialize() {
+    	holdList.getItems().addAll(Model.getHold());
     }
 }

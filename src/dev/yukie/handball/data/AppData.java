@@ -1,11 +1,12 @@
 package dev.yukie.handball.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppData {
-    public static List<String>  hold;
-    public static List<int[]>   kampe;
-    public static List<String>  hændelser;
-    public static List<int[]>   registreringer;
-    public static List<Integer> stilling;
+    public static List<String>  hold = new ArrayList<>();
+    public static List<int[]>   kampe = new ArrayList<>();
+    public static List<String>  haendelser = new ArrayList<>();
+    public static List<int[]>   registreringer = new ArrayList<>();
+    public static List<Integer> stilling = new ArrayList<>();
 }
