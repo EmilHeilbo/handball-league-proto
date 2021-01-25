@@ -54,4 +54,4 @@ INSERT INTO hold (navn) VALUES
 ('Koebenhavn'),
 ('Silkeborg');
 
-SELECT * FROM hold;
+SELECT * FROM hold ;
