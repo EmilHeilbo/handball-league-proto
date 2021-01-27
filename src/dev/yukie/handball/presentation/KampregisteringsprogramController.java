@@ -26,6 +26,7 @@ public class KampregisteringsprogramController{
         Model.addHold("Test");
         System.out.println("Trykkede paa opret Hold.");
         App.popupStage.setScene(App.sceneOpretHold);
+        App.popupStage.setTitle("Opret Hold");
         App.popupStage.show();
     }
     @FXML
@@ -33,6 +34,7 @@ public class KampregisteringsprogramController{
         kampeList.getItems().clear();
         System.out.println("Trykkede paa opret Kamp.");
         App.popupStage.setScene(App.sceneOpretKamp);
+        App.popupStage.setTitle("Opret Kamp");
         App.popupStage.show();
     }
     

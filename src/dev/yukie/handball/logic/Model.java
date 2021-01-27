@@ -13,14 +13,13 @@ public class Model {
 
     // Initialisering - fjernes naar database delen er implementeret.
     /*static{
-        AppData.hold = new ArrayList<>(
-            Arrays.asList(
+        AppData.hold = new ArrayList<>( Arrays.asList(
                 "",
                 "Aalborg",     // 1
                 "Aarhus",      // 2
-                "Herning",    // 3
+                "Herning",     // 3
                 "Koebenhavn",  // 4
-                "Silkeborg"));// 5
+                "Silkeborg")); // 5
 
         AppData.kampe = new ArrayList<>(
             Arrays.asList(
@@ -60,9 +59,10 @@ public class Model {
 // ##########    Getters     ###########
 // ##########vvvvvvvvvvvvvvvv###########
 
-    public static List<String> getHold()
-    {   if(AppData.hold.size()==0) return AppData.hold;
-        return AppData.hold.subList(1, AppData.hold.size());}
+    public static List<String> getHold() {
+        if(AppData.hold.size()==0) return AppData.hold;
+        return AppData.hold.subList(1, AppData.hold.size());
+    }
 
     /* TODO - Logik,
     retunere en liste med array af Strings,
@@ -76,8 +76,8 @@ public class Model {
     retunere en liste med array af Strings,
     svarende til tidspunkt og haendelse af registreringer,
     for den bestemte kamp */
-    public static List<int[]>  getRegistreringer(int kamp)
-    {return AppData.registreringer.subList(1, AppData.registreringer.size());}
+    public static List<int[]>  getRegistreringer(int kamp) {
+        return AppData.registreringer.subList(1, AppData.registreringer.size());}
 
     /* TODO - Logik
     retunere en liste med array af Strings,
