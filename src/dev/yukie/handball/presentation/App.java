@@ -1,6 +1,6 @@
 package dev.yukie.handball.presentation;
 
-import dev.yukie.handball.data.JDBCHandler;
+import dev.yukie.handball.logic.Model;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     private FXMLLoader loader = new FXMLLoader();
     private Parent root;
+    public static final Model model = new Model();
     public static Stage stage = new Stage();
     public static Stage popupStage = new Stage();
     public static Scene sceneKampregistreringsprogram;
@@ -20,7 +21,6 @@ public class App extends Application {
     public static Scene registrerKamp;
 
     public static void main(String[] args) {
-        var jdbc = new JDBCHandler();
         launch(args);
     }
 

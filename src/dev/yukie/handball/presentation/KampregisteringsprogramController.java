@@ -39,6 +39,7 @@ public class KampregisteringsprogramController{
     }
     
     public void initialize() {
-    	holdList.getItems().addAll(Model.getHold());
+        holdList.getItems().addAll(Model.getHold());
+        kampeList.getItems().addAll(Model.getKampe());
     }
 }
