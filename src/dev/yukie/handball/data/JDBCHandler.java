@@ -3,14 +3,15 @@ package dev.yukie.handball.data;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class JDBCHandler {
 
     private static final String connectionUrl = "jdbc:sqlserver://localhost:1433;instanceName=SQLEXPRESS;databaseName=KampregistreringDB;integratedSecurity=true;";
     private static Connection connection;
-    private static String readHaendelser = "SELECT haendelse FROM haendelser ORDER BY haendelse_id";
-    private static String readKampe = "SELECT (hjemme,ude) FROM kampe ORDER BY kamp_id";
+    private static String selectHold = "SELECT * FROM hold ORDER BY hold_id";
+    private static String selectKampe = "SELECT (hjemme,ude) FROM kampe ORDER BY kamp_id";
+    private static String selectHaendelser = "SELECT haendelse FROM haendelser ORDER BY haendelse_id";
+    private static String selectRegistreringer = "SELECT (kamp, tidspunkt, haendelse) FROM registreringer ORDER BY registrerings_id";
 
 
     static {
@@ -35,53 +36,69 @@ public class JDBCHandler {
         AppData.hold.add("");
         try {
 			var stmt = connection.createStatement();
-			var sql = "SELECT * FROM hold ORDER BY hold_id";
-			var rs = stmt.executeQuery(sql);
+			var rs = stmt.executeQuery(selectHold);
 			while(rs.next()) {
 				AppData.hold.add(rs.getString("navn"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
     }
 
-
-    /* TODO - Logik
-    udfoer SELECT Query paa kampe,
-    retunere alle kampe i en liste af int arrays,
-    hvor int[0], svarer til hjemme holdet,
-    og int[1], svarer til ude holdet.
-    indeks 0 i listen skal vaere tom. */
     public static void readKampe(){
-        AppData.kampe = new ArrayList<int[]>();
+        AppData.kampe.clear();
+        AppData.kampe.add(new int[0]);
+        try {
+			var stmt = connection.createStatement();
+			var rs = stmt.executeQuery(selectKampe);
+			var temp = new int[2];
+			while(rs.next()) {
+                temp[0] = rs.getInt("hjemme");
+                temp[1] = rs.getInt("ude");
+				AppData.kampe.add(temp);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
     }
 
-    /* TODO - Logik
-    udfoer SELECT Query paa haendelser,
-    retunere alle haendelser i raekkefoelge,
-    indeks 0 skal vaere tom. */
     public static void readHaendelser(){
-        AppData.haendelser = new ArrayList<String>();
-
+        AppData.haendelser.clear();
+        AppData.haendelser.add("");
+        try {
+			var stmt = connection.createStatement();
+			var rs = stmt.executeQuery(selectHaendelser);
+			while(rs.next()) {
+				AppData.haendelser.add(rs.getString("haendelse"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
     }
 
-    /* TODO - Logik
-    udfoer SELECT Query paa registreringer,
-    retunere alle registreringer i en liste af int arrays,
-    hvor int[0], svarer til kampen,
-    int[1], svarer til tidspunktet,
-    int[2], svarer til haendelsen.
-    indeks 0 i listen skal vaere tom. */
     public static void readRegistreringer(){
-        AppData.registreringer = new ArrayList<int[]>();
+        AppData.registreringer.clear();
+        AppData.registreringer.add(new int[0]);
+        try {
+			var stmt = connection.createStatement();
+			var rs = stmt.executeQuery(selectRegistreringer);
+			var temp = new int[3];
+			while(rs.next()) {
+                temp[0] = rs.getInt("kamp");
+                temp[1] = rs.getInt("tidspunkt");
+                temp[2] = rs.getInt("haendelse");
+				AppData.kampe.add(temp);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
     }
 
     /* TODO - Logik
     udfoer INSERT paa hold med auto increment. */
     public void createHold(String navn){
 
-        }
+    }
 
 
 
