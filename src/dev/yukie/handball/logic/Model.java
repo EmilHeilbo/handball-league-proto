@@ -78,9 +78,11 @@ public class Model {
             return false;
     }
 
-    public static boolean addKamp(int hjemme, int ude) {
-        if (jdbc.createKamp(hjemme, ude)) {
-            olKampe.add(AppData.hold.get(hjemme) + " Vs. " + AppData.hold.get(ude));
+    public static boolean addKamp(String hjemme, String ude) {
+        int h = AppData.hold.indexOf(hjemme);
+        int u = AppData.hold.indexOf(ude);
+        if (jdbc.createKamp(h, u)) {
+            olKampe.add(hjemme + " Vs. " + ude);
             return true;
         } else
             return false;
