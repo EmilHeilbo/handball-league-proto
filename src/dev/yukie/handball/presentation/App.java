@@ -32,6 +32,7 @@ public class App extends Application {
         root = loader.load();
         sceneKampregistreringsprogram = new Scene(root);
         stage.setScene(sceneKampregistreringsprogram);
+        stage.setTitle("Kampregistreringsprogram");
         loadAllFxml();
         stage.show();
     }

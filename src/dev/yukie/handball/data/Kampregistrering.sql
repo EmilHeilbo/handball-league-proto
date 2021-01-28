@@ -110,7 +110,7 @@ INSERT INTO registreringer (kamp, tidspunkt, haendelse) VALUES
 (2,76,1),
 (2,118,3);
 
---SELECT * FROM hold ORDER BY hold_id;
-SELECT hjemme, ude FROM kampe ORDER BY kamp_id;
+SELECT * FROM hold ORDER BY hold_id;
+--SELECT hjemme, ude FROM kampe ORDER BY kamp_id;
 --SELECT haendelse FROM haendelser ORDER BY haendelse_id;
 --SELECT kamp, tidspunkt, haendelse FROM registreringer ORDER BY kamp;
