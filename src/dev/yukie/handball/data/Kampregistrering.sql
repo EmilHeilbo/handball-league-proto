@@ -46,7 +46,6 @@ CREATE TABLE registreringer(
 );
 
 GO
-
 CREATE PROCEDURE insert_hold @navn nvarchar(20)
 AS
 INSERT INTO hold (navn) VALUES (@navn);
