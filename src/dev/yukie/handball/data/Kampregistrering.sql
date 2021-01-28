@@ -45,6 +45,17 @@ CREATE TABLE registreringer(
 	CONSTRAINT FK_Haendelse    FOREIGN KEY (haendelse) REFERENCES haendelser(haendelse_id),
 );
 
+GO
+
+CREATE PROCEDURE insert_hold @navn nvarchar(20)
+AS
+INSERT INTO hold (navn) VALUES (@navn);
+GO
+
+CREATE PROCEDURE select_registrering @kamp int AS
+SELECT * FROM registreringer WHERE kamp_id = @kamp ORDER BY registrering_id;
+GO
+
 
 
 INSERT INTO hold (navn) VALUES
