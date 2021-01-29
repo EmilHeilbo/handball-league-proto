@@ -18,7 +18,7 @@ public class App extends Application {
     public static Scene sceneKamprapport;
     public static Scene sceneOpretHold;
     public static Scene sceneOpretKamp;
-    public static Scene registrerKamp;
+    public static Scene sceneRegistrerKamp;
 
     public static void main(String[] args) {
         launch(args);
@@ -53,5 +53,9 @@ public class App extends Application {
         root = loader.load();
         sceneOpretKamp = new Scene(root);
 
+        loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("RegistrerKamp.fxml"));
+        root = loader.load();
+        sceneRegistrerKamp = new Scene(root);
     }
 }

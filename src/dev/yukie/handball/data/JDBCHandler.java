@@ -11,7 +11,7 @@ public class JDBCHandler {
     private static final String selectHold = "SELECT * FROM hold ORDER BY hold_id";
     private static final String selectKampe = "SELECT hjemme, ude FROM kampe ORDER BY kamp_id";
     private static final String selectHaendelser = "SELECT haendelse FROM haendelser ORDER BY haendelse_id";
-    private static final String selectRegistreringer = "SELECT kamp, tidspunkt, haendelse FROM registreringer ORDER BY registrerings_id";
+    private static final String selectRegistreringer = "SELECT kamp, tidspunkt, haendelse FROM registreringer ORDER BY kamp";
     private static final String callInsertHold = "{CALL insert_hold (?)}";
     private static final String callInsertKamp = "{CALL insert_kamp (?,?)}";
     private static final String callInsertRegistrering = "{CALL insert_registrering (?,?,?)}";
@@ -89,7 +89,7 @@ public class JDBCHandler {
                 temp[0] = rs.getInt("kamp");
                 temp[1] = rs.getInt("tidspunkt");
                 temp[2] = rs.getInt("haendelse");
-				AppData.registreringer.add(temp);
+                AppData.registreringer.add(temp);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

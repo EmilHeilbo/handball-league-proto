@@ -19,7 +19,7 @@ public class Model {
     static {
         olHold.setAll(getHold());
         olKampe.setAll(getKampe());
-        olStilling.setAll(getStilling());
+        //olStilling.setAll(getStilling());
     }
 
     public static ObservableList<String> getObservableList(String type) {
@@ -49,13 +49,14 @@ public class Model {
         return result;
     }
 
-    private static List<String> getRegistreringer(int kamp) {
+    private static List<String> getRegistreringer(String kamp) {
+        int k = getKampe().indexOf(kamp);
         var result = new ArrayList<String>();
         var ri = AppData.registreringer.iterator();
         ri.next();
         while (ri.hasNext()) {
             var temp = ri.next();
-            if (temp[0] != kamp)
+            if (temp[0] != k)
                 continue;
             result.add(temp[1] + AppData.haendelser.get(temp[2]));
         }
@@ -67,15 +68,25 @@ public class Model {
      * points.
      */
     private static List<String> getStilling() {
-        return new ArrayList<>();
+        //calculateStilling();
+        var result = new ArrayList<String>();
+        for (int i = 1; i < AppData.stilling.size(); i++) {
+            try {
+                AppData.stilling.get(i);
+            } catch (Exception e) {
+                continue;
+            }
+            result.add(AppData.stilling.get(i) + " points til " + AppData.hold.get(i));
+        }
+        return result;
     }
 
     public static boolean addHold(String navn) {
         if (jdbc.createHold(navn)) {
             olHold.add(navn);
             return true;
-        } else
-            return false;
+        }
+        return false;
     }
 
     public static boolean addKamp(String hjemme, String ude) {
@@ -84,18 +95,47 @@ public class Model {
         if (jdbc.createKamp(h, u)) {
             olKampe.add(hjemme + " Vs. " + ude);
             return true;
-        } else
-            return false;
+        }
+        return false;
     }
 
     public static boolean addRegistrering(int kamp, int tidspunkt, int haendelse) {
         return jdbc.createRegistrering(kamp, tidspunkt, haendelse);
     }
 
-    /*
-     * TODO - Logik udregn stiling ud fra registreringer, dog kun naar kampen er
-     * faerdig registreret.
-     */
-    private static void calculateStilling() {
+    public static boolean hasRegistreringer(String kamp) {
+        var k = getKampe().indexOf(kamp)+1;
+        boolean skipFirst = true;
+        for (int[] i : AppData.registreringer) {
+            if (skipFirst) {
+                skipFirst = false;
+                continue;
+            }
+            if (i[0] == k)
+                return true;
+        }
+        return false;
     }
+
+    /*
+     * private static void addPoints(int hold, int points) {
+     * AppData.stilling.ensureCapacity(hold+1); boolean noValue = false; try {
+     * AppData.stilling.get(hold); } catch (Exception e) { noValue = true; } if
+     * (noValue) AppData.stilling.add(hold, points); else AppData.stilling.set(hold,
+     * AppData.stilling.get(hold)+points); }
+     */
+
+    /*
+     * private static void calculateStilling() { int kamp = 0; boolean skipFirst =
+     * true; int hjemmeMaal, udeMaal; hjemmeMaal = udeMaal = 0; for (int[]
+     * registrering : AppData.registreringer) { if (skipFirst) { skipFirst = false;
+     * continue; } if (kamp == 0) { kamp = registrering[0]; } else if
+     * (registrering[0] != kamp) { int hjemmeHold, udeHold; hjemmeHold =
+     * AppData.kampe.get(kamp)[0]; udeHold = AppData.kampe.get(kamp)[1]; if
+     * (hjemmeMaal == udeMaal) { addPoints(hjemmeHold, 1); addPoints(udeHold, 1); }
+     * else if (hjemmeMaal > udeMaal) { addPoints(hjemmeHold, 2); addPoints(udeHold,
+     * 0); } else { addPoints(udeHold, 2); addPoints(hjemmeHold, 0); } hjemmeMaal =
+     * udeMaal = 0; kamp = registrering[0]; } if(registrering[2]==1) hjemmeMaal++;
+     * else if(registrering[2]==3) udeMaal++; } }
+     */
 }
